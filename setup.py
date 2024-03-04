@@ -7,8 +7,8 @@ if sys.platform.startswith("darwin"):
     COMPILE_ARGS.append("-stdlib=libc++")
     COMPILE_ARGS.append("-mmacosx-version-min=10.7")
 elif sys.platform.startswith("win"):
-    # Add Windows-specific compiler options if needed
-    pass
+    # Exclude dlfcn.h related code when compiling on Windows
+    COMPILE_ARGS.append("-DNO_DLFCN")
 
 phonetisaurus_extension = Extension(
     name="_phonetisaurus",
