@@ -1,7 +1,7 @@
 from setuptools import setup, Extension
 import sys
 
-COMPILE_ARGS = ["-std=c++17", "-w"]
+COMPILE_ARGS = ["/std:c++17", "-w"]
 
 if sys.platform.startswith("darwin"):
     COMPILE_ARGS.append("-stdlib=libc++")
