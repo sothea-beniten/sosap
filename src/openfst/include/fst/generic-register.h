@@ -6,7 +6,6 @@
 
 #include <fst/compat.h>
 #ifndef FST_NO_DYNAMIC_LINKING
-#include <dlfcn.h>
 #endif
 #include <map>
 #include <string>
