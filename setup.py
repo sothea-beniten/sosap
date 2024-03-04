@@ -1,12 +1,15 @@
 from setuptools import setup, Extension
 import sys
 
-COMPILE_ARGS = ["-std=c++17", "-w"]
+COMPILE_ARGS = ["-w"]
 
 if sys.platform.startswith("darwin"):
     COMPILE_ARGS.append("-stdlib=libc++")
     COMPILE_ARGS.append("-mmacosx-version-min=10.7")
-    
+elif sys.platform.startswith("win"):
+    # Add Windows-specific compiler options if needed
+    pass
+
 phonetisaurus_extension = Extension(
     name="_phonetisaurus",
     sources=[
